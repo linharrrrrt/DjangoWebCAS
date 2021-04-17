@@ -20,8 +20,8 @@ pip install Django
 windows使用cmd或powershell, Linux使用终端
 
 ```
-...path_to_mysite/> cd mysite/
-...path_to_mysite/mysite> python manage.py runserver 0.0.0.0:8000
+...path_to_DjangoWebCAS/> cd mysite/
+...path_to_DjangoWebCAS/mysite> python manage.py runserver 0.0.0.0:8000
 ```
 
 然后在浏览器中输入地址即可开始访问。  
