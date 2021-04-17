@@ -1,9 +1,9 @@
 # Django在线Web抢答系统
 
-Django在线Web多人抢答系统
-![login](login.png)
-![register](register.png)
-![qiangda](qiangda.png)
+Django在线Web多人抢答系统  
+![login](login.png)  
+![register](register.png)  
+![qiangda](qiangda.png)  
 
 ## 说明
 因为我们支部需要使用，所以花了两个小时完成的。
