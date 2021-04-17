@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>抢答</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- 上述meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+            <div class="m-auto col-xs-12 col-md-6 col-sm-8 col-lg-4 jumbotron">
+        <p>
+            <a href="/polls/logout/" c>登出</a>
+        </p>
+        <h2 class="text-center">准备抢答！</h2>
+            <div class="col">
+                <form class="form-register" action="/polls/qiangda/" method="post">
+
+                  {% csrf_token %}
+
+                  <div class="form-group">
+                      {{ qiangda_form.username.label_tag }}  {{ request.session.user_name }}
+                      <input type="hidden" name="username"id="id_username" value="{{ request.session.user_name }}">
+                  </div>
+                  <div class="form-group">
+                    {{ qiangda_form.groupname.label_tag }}  {{ request.session.group_name }}
+                    <input type="hidden" name="groupname" id="id_groupname" value="{{ request.session.group_name }} ">
+                </div>
+                  <div>
+                      <button type="submit" class="btn btn-primary ">抢答</button>  <a href="/polls/qiangda/"><button type="button" class="btn btn-info">刷新结果</button></a>
+                  </div>
+                </form>
+            </div>
+
+            <br>
+            <br>
+    <h3 class="text-center">---抢答结果---</h3>
+    {% if qiangdalist %}
+    <ol>
+    {% for qiangdaitem in qiangdalist %}
+    <li>{{ qiangdaitem.pub_date|date:"H:i:s.u"}}  |  {{ qiangdaitem.groupname }}  |  {{ qiangdaitem.username }}</li>
+    {% endfor %}
+    </ol>
+    {% else %}
+        <p>No Results.</p>
+    {% endif %}
+    </div>
+</div> <!-- /container -->
+<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    {#    以下三者的引用顺序是固定的#}
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.15.0/umd/popper.js"></script>
+    <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+  </body>
+
+
+
+</html>
