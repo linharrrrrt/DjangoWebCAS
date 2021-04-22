@@ -25,7 +25,7 @@ windows使用cmd或powershell, Linux使用终端
 ```
 
 然后在浏览器中输入地址即可开始访问。  
-http://执行上述命令的机器的ip地址:8000/polls/index/
+http://执行上述命令的机器的ip地址:8000/polls/index/  
 例如：
 执行上面命令的机器的IP地址为192.168.1.101
 那么使用下面的地址进行访问  
